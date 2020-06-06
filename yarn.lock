@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"-@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/-/-/--0.0.1.tgz#db6db7cd866142880dd03e5b8781d1b4fac0e5bd"
+  integrity sha512-3HfneK3DGAm05fpyj20sT3apkNcvPpCuccOThOPdzz8sY7GgQGe0l93XH9bt+YzibcTIgUAIMoyVJI740RtgyQ==
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.1":
   version "7.10.1"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.10.1.tgz#d5481c5095daa1c57e16e54c6f9198443afb49ff"
@@ -4473,6 +4478,11 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
+
+navigation@^5.3.1:
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/navigation/-/navigation-5.3.1.tgz#38ee42313e4c1105184280204c490b3cddb22cd1"
+  integrity sha512-iVNoW1Vnlm0VYLyEqAdK5l5Or4SqVVzdFonMjMosRixqKK2aD8iFQBa0ORah05Dce0sXqY0SlQ03wLP/K7P+hw==
 
 negotiator@0.6.2:
   version "0.6.2"
