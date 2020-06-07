@@ -31,31 +31,31 @@ const Footer = ({ dispatch }) => {
       <Text style={styles.sub}>Logout</Text>
     </TouchableOpacity>
   ) : (
-    <TouchableOpacity
-      testID={"Loginbutton"}
-      onPress={() => {
-        setModalVisible(true);
-      }}
-    >
-      <Text style={styles.sub}>Login</Text>
-    </TouchableOpacity>
-  );
+      <TouchableOpacity
+        testID={"Loginbutton"}
+        onPress={() => {
+          setModalVisible(true);
+        }}
+      >``
+        <Text style={styles.sub}>Login</Text>
+      </TouchableOpacity>
+    );
 
   const modalShow = !modalVisible && (
-    
-      <View style={styles.background}>
-          <TouchableOpacity
-            onPress={() => RootNavigation.navigate("ArticleList")}
-          ></TouchableOpacity>
-      <Text style={styles.header}>DNS </Text>
-      {showButton}
-    
+    { showButton }
   );
 
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
     return (
+      <View style={styles.background}>
+        <TouchableOpacity
+          onPress={() => RootNavigation.navigate("ArticleList")}
+        >
+          <Text style={styles.header}>DNS </Text>
+        </TouchableOpacity>
+      </View>
       <View
         style={[
           styles.background,
@@ -81,8 +81,9 @@ const Footer = ({ dispatch }) => {
         </Modal>
         {modalShow}
       </View>
+        
     );
-  }
+  };
 };
 const styles = StyleSheet.create({
   header: {
