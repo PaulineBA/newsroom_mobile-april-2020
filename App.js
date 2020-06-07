@@ -1,35 +1,25 @@
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import ArticleList from "./src/components/ArticleList";
-import SingleArticle from "./src/components/SingleArticle";
-import Header from "./src/components/Header";
-import axios from "axios";
-import Footer from "./src/components/Footer";
-import { Provider } from "react-redux";
-import configureStore from "./src/state/store/configureStore";
-
-axios.defaults.baseURL = "https://localhost:3000/api";
-const Stack = createStackNavigator();
-const store = configureStore();
-
-const App = () => {
-  return (
-    <>
-      <Provider store={store}>
-        <NavigationContainer>
-          <Header />
-
-          <Stack.Navigator headerMode="none" initialRouteName="ArticleList">
-            <Stack.Screen name="ArticleList" component={ArticleList} />
-            <Stack.Screen name="SingleArticle" component={SingleArticle} />
-          </Stack.Navigator>
-          <Footer />
-        </NavigationContainer>
-      </Provider>
-    </>
-  );
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { AppLoading } from "expo";
+import { useFonts } from "@use-expo/font";
+import fonts from "./module/fonts";
+import * as RootNavigation from "../state/reducers/rootNavigation.js";
+const Header = () => {
+  let [fontsLoaded] = useFonts(fonts);
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <>
+        <View style={styles.background}>
+          <TouchableOpacity
+            onPress={() => RootNavigation.navigate("ArticleList")}
+          >
+            <Text style={styles.header}>DNS </Text>
+          </TouchableOpacity>
+          <Text style={styles.sub}> Daily News Sense</Text>
+        </View>
+      </>
+    );
+  }
 };
-
-export default App;
